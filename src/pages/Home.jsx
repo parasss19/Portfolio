@@ -1,6 +1,7 @@
 import { Canvas } from '@react-three/fiber'
 import { Suspense } from 'react'
 import Loader from '../Components/Loader'
+import Island from '../models/Island'
 
 const Home = () => {
   return (
@@ -15,13 +16,15 @@ const Home = () => {
     <Canvas className = 'w-full h-screen bg-transparent'  camera = {{near: 0.1, far:1000}} >
     
     {/* it consist of loader and used for rendering loading screen */}
-     <Suspense fallback = {<Loader/>}>
+     <Suspense fallback = {<Loader/>} >
        {/* different types of lights this light show their effect when we add our model(island) */}
        <directionalLight/>
        <ambientLight/>
        <pointLight/>
        <spotLight/>
        <hemisphereLight/>
+
+       <Island/>
      </Suspense>
 
     </Canvas>
