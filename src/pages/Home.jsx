@@ -7,15 +7,15 @@ import {Island, Bird, Sky, Plane} from '../models'
 
 const Home = () => {
 
-  //feature = Rotation(draging) of island 
-    const [isRotating, setIsRotating] = useState(false)
-  
+  const [isRotating, setIsRotating] = useState(false)    //feature = Rotation(draging) of island 
+  const [currentStage, setCurrentStage] = useState(1);   //this state is for different popup msg stages which show diff msg on diff stage
+    
 
   // used to adjust the island position on different screens
     const adjustIslandForScreenSize = ()=> {
       let screenScale;
       let screenPosition = [0, -6.5, -43.4]
-      let screenRotation = [0.1, 4.7, 0]
+      let screenRotation = [0.1, 4.7077, 0]
 
   // If screen width is less than 768px, adjust the scale and position
     if (window.innerWidth < 768) {
@@ -28,11 +28,11 @@ const Home = () => {
 
   // used to adjust the Plane position on different screens
   const adjustPlaneForScreenSize = ()=> {
-    let screenScale, screenPosition, screenRotation = [0, 20, 0];
+    let screenScale, screenPosition, screenRotation = [0, 20.1, 0];
    
   if (window.innerWidth < 768) {
     screenScale = [1.5, 1.5, 1.5];
-    screenPosition = [0, 1.5, 0];
+    screenPosition = [0, -1.5, 0];
   } else {
     screenScale = [3, 3, 3];
     screenPosition = [0, -4, -4];
@@ -45,6 +45,7 @@ const Home = () => {
     const [islandScale, islandPosition, islandRoation] = adjustIslandForScreenSize()
     const [planeScale, planePosition, planeRotation] = adjustPlaneForScreenSize()
  
+
   return (
    <section className='relative w-full h-screen'>
 
@@ -83,6 +84,7 @@ const Home = () => {
          rotation = {islandRoation}
          isRotating = {isRotating}
          setIsRotating = {setIsRotating}
+         setCurrentStage = {setCurrentStage}
       />
 
      </Suspense>
