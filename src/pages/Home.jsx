@@ -50,9 +50,9 @@ const Home = () => {
    <section className='relative w-full h-screen'>
 
     {/* This is the POPUP msg show when we move over island */}
-    {/* <div className='absolute top-28 left-0 right-0 text-center'>
+    <div className='absolute top-28 left-0 right-0 text-center'>
         POPUP msg
-    </div> */}
+    </div>
 
     {/*All 3d models render here */}
     <Canvas className = {`w-full h-screen bg-transparent ${isRotating ? 'cursor-grabbing' : 'cursor-grab'} `}  camera = {{near: 0.1, far: 1000}} >
@@ -76,7 +76,9 @@ const Home = () => {
         
       <Bird/>
 
-      <Sky/>
+      <Sky 
+      isRotating = {isRotating}
+      />
       
       <Island
          scale = {islandScale}
