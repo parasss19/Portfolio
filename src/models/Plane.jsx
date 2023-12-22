@@ -1,10 +1,12 @@
-import React from 'react'
+import { useGLTF } from '@react-three/drei'
+import planeScene from '../assets/3d/plane.glb'
 
 const Plane = () => {
+  const {scene, animation} = useGLTF(planeScene)
   return (
-    <div>
-      
-    </div>
+    <mesh>
+      <primitive object={scene}/>
+    </mesh>
   )
 }
 

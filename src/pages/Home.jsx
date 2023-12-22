@@ -66,6 +66,8 @@ const Home = () => {
 
      </Suspense>
 
+     <Plane/>
+
     </Canvas>
    </section>
   )
