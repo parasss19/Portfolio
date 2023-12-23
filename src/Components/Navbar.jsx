@@ -10,13 +10,13 @@ const Navbar = () => {
       </NavLink>
 
       {/* other navbar icons */}
-      <nav className='flex gap-7 font-medium text-lg'>
-        <NavLink to="/about" className = { ({isActive})=> isActive ? "text-indigo-500" : "text-black"} >
-         About
+      <nav className='flex gap-7 font-medium text-lg ' >
+        <NavLink to="/about" className = { ({isActive}) => isActive ? "text-indigo-500" : "text-black" } >
+        <button className='bg-white px-2 py-1 rounded-lg shadow-lg hover:bg-yellow-300 font-semibold'> About</button>
         </NavLink>
 
-        <NavLink to="/projects" className = { ({isActive})=> isActive ? "text-indigo-500" : "text-black"} >
-         Projects
+        <NavLink to="/projects" className = { ({isActive})=> isActive ? "text-indigo-500" : "text-black" } >
+        <button className='bg-white px-2 py-1 rounded-lg shadow-lg hover:bg-yellow-300 font-semibold'>Projects</button>
         </NavLink>
       </nav>
 

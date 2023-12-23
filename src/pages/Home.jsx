@@ -3,6 +3,7 @@ import { Suspense, useState } from 'react'
 
 import Loader from '../Components/Loader'
 import {Island, Bird, Sky, Plane} from '../models'
+import HomeInfo from '../Components/HomeInfo'
 
 
 const Home = () => {
@@ -50,9 +51,13 @@ const Home = () => {
    <section className='relative w-full h-screen'>
 
     {/* This is the POPUP msg show when we move over island */}
-    <div className='absolute top-28 left-0 right-0 text-center'>
-        POPUP msg
+    <div className='absolute top-28 left-0 right-0 z-10 flex items-center justify-center'>
+      {/* { console.log(currentStage)}      it shows the different stages as 1,2,3,4 in console(it just for the check that our currentStage is working or not) */}
+
+      {/* here we render out HomeInfo component if currentStage is present and also pass it using props */}
+      {currentStage   &&  <HomeInfo currentStage = {currentStage} />}
     </div>
+
 
     {/*All 3d models render here */}
     <Canvas className = {`w-full h-screen bg-transparent ${isRotating ? 'cursor-grabbing' : 'cursor-grab'} `}  camera = {{near: 0.1, far: 1000}} >
@@ -100,7 +105,7 @@ const Home = () => {
 
     </Canvas>
    </section>
-  )
-}
+   )
+ }
 
 export default Home
