@@ -1,7 +1,9 @@
 import { useState , useRef} from "react"
 import { Island } from "../models"
 import emailjs from '@emailjs/browser'
-import useAlert from '../hooks/useAlert'
+
+import useAlert from '../hooks/useAlert'      //it is our custom hook for an alert
+import Alert from "../Components/Alert"
 
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faGithub, faLinkedin, faTwitter, faDiscord} from '@fortawesome/free-brands-svg-icons'
@@ -46,15 +48,23 @@ const Contact = () => {
     .then(() => {
       setIsLoading(false)
 
-      //clean the form after submiting
-      setForm({name:'' , email:'' , message:''});
-
       //show alert
-      // showAlert()
+      showAlert({show:true, text:'Message sent succesfully', type:'success' })
+
+      //to hide alert
+      setTimeout(() => {
+        //clean the form after submiting
+        setForm({name:'' , email:'' , message:''});
+        hideAlert(false)
+      }, 3000);
+
     })
     .catch((err) => {
       console.log(err)
       setIsLoading(false)
+
+      //show alert
+      showAlert({show:true, text:"'I didn't received your message ", type:'danger' })
     });
 
   }
@@ -62,6 +72,13 @@ const Contact = () => {
 
   return (
    <section className="relative flex flex-col lg:flex-row max-w-5xl min-h-[calc(100vh-80px)] mx-auto px-8 pt-32 pb-12 ">
+   
+   {/* ALERT */}
+   {/* <Alert text="tesstt"/> */}
+
+   {alert.show && <Alert {...alert} />}  
+  
+
     <div className="flex flex-col flex-1 min-w-[50%]">
 
       <h1 className="font-poppins text-5xl lg:text-6xl font-semibold">G<span className="text-red-500">e</span>t in To<span className="text-blue-300">u</span>ch</h1>
