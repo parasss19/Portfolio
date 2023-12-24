@@ -25,15 +25,15 @@ const renderContent = {
         </h1>
     ,
     2: <InfoBox 
-         text="Worked with many companies and learned many skills along the way"
+         text="As a web developer, I turn ideas into realities with a blend of code and creativity."
          link= '/about'
-         btnText='Learn more'
+         btnText='About Me'
         />
     ,
     3: <InfoBox 
-        text='Led multiple projects and build many projects'
+        text='Check out some of my amazing projects! ⭐'
         link='/projects'
-        btnText='Visit my Portfolio'
+        btnText='Projects'
        />
     ,
     4: <InfoBox 

@@ -1,12 +1,20 @@
 import { useState , useRef} from "react"
 import { Island } from "../models"
 import emailjs from '@emailjs/browser'
+import useAlert from '../hooks/useAlert'
+
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
+import { faGithub, faLinkedin, faTwitter, faDiscord} from '@fortawesome/free-brands-svg-icons'
+
+
 
 const Contact = () => {
   const formRef = useRef()
 
   const[form , setForm] = useState({name:'' , email:'' , message:''})     //it is used to update name, email and message input
   const[isLoading, setIsLoading] = useState(false)                        //it is used to update button text ("send message" or "sending..." based on isLoading)
+  const {alert, showAlert, hideAlert} = useAlert()                        //it is used for the alert feature in the contact page
+
 
   //handle when we write in any fields
    const handleChange = (e) => {
@@ -39,7 +47,10 @@ const Contact = () => {
       setIsLoading(false)
 
       //clean the form after submiting
-      setForm({name:'' , email:'' , message:''} );
+      setForm({name:'' , email:'' , message:''});
+
+      //show alert
+      // showAlert()
     })
     .catch((err) => {
       console.log(err)
@@ -49,92 +60,71 @@ const Contact = () => {
   }
 
 
-  //handle when we click on any input field (will be used for the FOX motion)
-  const handleFocus = ()=> {
-
-  }
-  //handle when we click out any input field (will be used for the FOX motion)
-  const handleBlur = ()=> {
-
-  }
-
-
   return (
    <section className="relative flex flex-col lg:flex-row max-w-5xl min-h-[calc(100vh-80px)] mx-auto px-8 pt-32 pb-12 ">
+    <div className="flex flex-col flex-1 min-w-[50%]">
 
-    {/*First Part*/}
-     <div className="flex flex-col flex-1 min-w-[50%]">
+      <h1 className="font-poppins text-5xl lg:text-6xl font-semibold">G<span className="text-red-500">e</span>t in To<span className="text-blue-300">u</span>ch</h1>
+ 
+      <div className="flex flex-row gap-4 mt-7 cursor-pointer ">
+       <a href="https://github.com/parasss19" target="blank"> <FontAwesomeIcon icon={faGithub}  className="w-7 h-7  hover:text-black-500/80 rounded-full" /> </a>
+       <a href="https://www.linkedin.com/in/paras-mehta19/" target="blank"> <FontAwesomeIcon icon={faLinkedin}   className="w-7 h-7  hover:text-black-500/80 rounded-full" /> </a>
+       <a href="https://twitter.com/ParasMe12853105" target="blank"> <FontAwesomeIcon icon={faTwitter}   className="w-7 h-7  hover:text-black-500/80 rounded-full" /> </a> 
+       <a href="https://discordapp.com/users/929032026978398238" target="blank"><FontAwesomeIcon icon={faDiscord}  className="w-7 h-7  hover:text-black-500/80 rounded-full" /> </a>  
+      </div>
 
-      <h1 className="font-poppins text-3xl font-semibold">Get in Touch</h1>
+      <form onSubmit={handleSubmit}  className="w-full lg:w-[80%] flex flex-col gap-7 mt-14 "  >
+      
+          <label className="text-black-500 font-semibold"> Name
+            <input 
+            className="bg-white border border-gray-200 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 mt-2.5 font-normal ;"
+            type="text"
+            name="name"
+            placeholder="Your name"
+            value={form.name}
+            required
+            onChange={handleChange}
+            />
+          </label>
 
-      <form onSubmit={handleSubmit}  className="w-full flex flex-col gap-7 mt-14"  >
-        
-        <label className="text-black-500 font-semibold"> Name
-          <input 
-          className="bg-white border border-gray-200 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 mt-2.5 font-normal ;"
-          type="text"
-          name="name"
-          placeholder="Your name"
-          value={form.name}
-          required
-          onChange={handleChange}
-          onFocus={handleFocus}
-          onBlur={handleBlur}
-          />
-        </label>
+          <label className="text-black-500 font-semibold"> Email
+            <input 
+            className="bg-white border border-gray-200 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 mt-2.5 font-normal ;"
+            type="text"
+            name="email"
+            placeholder="Your Email"
+            value={form.email}
+            required
+            onChange={handleChange}
+            />
+          </label>
 
-        <label className="text-black-500 font-semibold"> Email
-          <input 
-          className="bg-white border border-gray-200 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 mt-2.5 font-normal ;"
-          type="text"
-          name="email"
-          placeholder="Your Email"
-          value={form.email}
-          required
-          onChange={handleChange}
-          onFocus={handleFocus}
-          onBlur={handleBlur}
-          />
-        </label>
+          <label className="text-black-500 font-semibold"> Your Message
+            <textarea 
+            className="bg-white border border-gray-200 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 mt-2.5 font-normal ;"
+            rows={4}
+            name="message"
+            placeholder="Let me know how I can help you!"
+            value={form.message}
+            required
+            onChange={handleChange}
+            />
+          </label>
 
-        <label className="text-black-500 font-semibold"> Your Message
-          <textarea 
-          className="bg-white border border-gray-200 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 mt-2.5 font-normal ;"
-          rows={4}
-          name="message"
-          placeholder="Let me know how I can help you!"
-          value={form.message}
-          required
-          onChange={handleChange}
-          onFocus={handleFocus}
-          onBlur={handleBlur}
-          />
-        </label>
+          <button
+            className=" text-white bg-gradient-to-r from-[#00c6ff] to-[#0072ff]  font-medium rounded-lg text-sm w-full sm:w-auto px-5 py-2.5 text-center;"
+            type="submit" 
+            disabled={isLoading}
+          >
 
-        <button
-          className=" text-white bg-gradient-to-r from-[#00c6ff] to-[#0072ff]  font-medium rounded-lg text-sm w-full sm:w-auto px-5 py-2.5 text-center;"
-          type="submit" 
-          disabled={isLoading}
-          onFocus={handleFocus}
-          onBlur={handleBlur}
-        >
-         {isLoading ? "Sending..." : "Send Message"}
-        </button>
+          {isLoading ? "Sending..." : "Send Message"}
 
+          </button>
       </form>
 
-     </div>
-
-
-    {/*Second Part FOX */}
-
-
+    </div>
    </section>
   )
 }
 
 export default Contact
-
-
-
-

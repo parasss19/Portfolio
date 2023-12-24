@@ -17,7 +17,7 @@ const Home = () => {
 
   //for audio part
   const audioRef = useRef(new Audio(sakura))
-  audioRef.current.volume = 0.4;
+  audioRef.current.volume = 0.3;
   audioRef.current.loop = true;
 
   useEffect(()=>{
