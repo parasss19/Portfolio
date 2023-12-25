@@ -81,7 +81,7 @@ const Contact = () => {
 
     <div className="flex flex-col flex-1 min-w-[50%]">
 
-      <h1 className="font-poppins text-5xl lg:text-6xl font-semibold">G<span className="text-red-500">e</span>t in To<span className="text-blue-300">u</span>ch</h1>
+      <h1 className="font-poppins text-4xl sm:text-5xl lg:text-6xl font-semibold">G<span className="text-red-500">e</span>t in To<span className="text-blue-300">u</span>ch</h1>
  
       <div className="flex flex-row gap-4 mt-7 cursor-pointer ">
        <a href="https://github.com/parasss19" target="blank"> <FontAwesomeIcon icon={faGithub}  className="w-7 h-7  hover:text-black-500/80 rounded-full" /> </a>
@@ -94,7 +94,7 @@ const Contact = () => {
       
           <label className="text-black-500 font-semibold"> Name
             <input 
-            className="bg-white border border-gray-200 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 mt-2.5 font-normal ;"
+            className="bg-white border outline-none border-gray-200 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 mt-2.5 font-normal ;"
             type="text"
             name="name"
             placeholder="Your name"
@@ -106,7 +106,7 @@ const Contact = () => {
 
           <label className="text-black-500 font-semibold"> Email
             <input 
-            className="bg-white border border-gray-200 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 mt-2.5 font-normal ;"
+            className="bg-white outline-none border border-gray-200 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 mt-2.5 font-normal ;"
             type="text"
             name="email"
             placeholder="Your Email"
@@ -118,7 +118,7 @@ const Contact = () => {
 
           <label className="text-black-500 font-semibold"> Your Message
             <textarea 
-            className="bg-white border border-gray-200 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 mt-2.5 font-normal ;"
+            className="bg-white outline-none border border-gray-200 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 mt-2.5 font-normal ;"
             rows={4}
             name="message"
             placeholder="Let me know how I can help you!"
@@ -129,7 +129,7 @@ const Contact = () => {
           </label>
 
           <button
-            className=" text-white bg-gradient-to-r from-[#00c6ff] to-[#0072ff]  font-medium rounded-lg text-sm w-full sm:w-auto px-5 py-2.5 text-center;"
+            className=" text-white bg-gradient-to-r from-[#00c6ff] to-[#0072ff]  font-medium rounded-lg text-sm w-full sm:w-auto px-5 py-2.5 text-center"
             type="submit" 
             disabled={isLoading}
           >

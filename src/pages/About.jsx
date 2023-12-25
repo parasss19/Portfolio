@@ -2,9 +2,9 @@ import React from 'react'
 
 const About = () => {
   return (
-    <div>
-      
-    </div>
+    <section className='max-container'>
+     <h1 className='head-text'>Hello</h1>
+    </section>
   )
 }
 
