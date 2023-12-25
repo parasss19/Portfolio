@@ -71,7 +71,7 @@ const Contact = () => {
 
 
   return (
-   <section className="relative flex flex-col lg:flex-row max-w-5xl min-h-[calc(100vh-80px)] mx-auto px-8 pt-32 pb-12 ">
+   <section className="relative flex flex-col lg:flex-row max-container ">
    
    {/* ALERT */}
    {/* <Alert text="tesstt"/> */}
@@ -83,7 +83,7 @@ const Contact = () => {
 
       <h1 className="font-poppins text-4xl sm:text-5xl lg:text-6xl font-semibold">G<span className="text-red-500">e</span>t in To<span className="text-blue-300">u</span>ch</h1>
  
-      <div className="flex flex-row gap-4 mt-7 cursor-pointer ">
+      <div className="flex flex-row gap-4 ml-2 mt-7 cursor-pointer ">
        <a href="https://github.com/parasss19" target="blank"> <FontAwesomeIcon icon={faGithub}  className="w-7 h-7  hover:text-black-500/80 rounded-full" /> </a>
        <a href="https://www.linkedin.com/in/paras-mehta19/" target="blank"> <FontAwesomeIcon icon={faLinkedin}   className="w-7 h-7  hover:text-black-500/80 rounded-full" /> </a>
        <a href="https://twitter.com/ParasMe12853105" target="blank"> <FontAwesomeIcon icon={faTwitter}   className="w-7 h-7  hover:text-black-500/80 rounded-full" /> </a> 
