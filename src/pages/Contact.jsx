@@ -4,10 +4,7 @@ import emailjs from '@emailjs/browser'
 
 import useAlert from '../hooks/useAlert'      //it is our custom hook for an alert
 import Alert from "../Components/Alert"
-
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
-import { faGithub, faLinkedin, faTwitter, faDiscord} from '@fortawesome/free-brands-svg-icons'
-
+import Socials from "../Components/Socials"
 
 
 const Contact = () => {
@@ -82,13 +79,8 @@ const Contact = () => {
     <div className="flex flex-col flex-1 min-w-[50%]">
 
       <h1 className="font-poppins text-4xl sm:text-5xl lg:text-6xl font-semibold">G<span className="text-red-500">e</span>t in To<span className="text-blue-300">u</span>ch</h1>
- 
-      <div className="flex flex-row gap-4 ml-2 mt-7 cursor-pointer ">
-       <a href="https://github.com/parasss19" target="blank"> <FontAwesomeIcon icon={faGithub}  className="w-7 h-7  hover:text-black-500/80 rounded-full" /> </a>
-       <a href="https://www.linkedin.com/in/paras-mehta19/" target="blank"> <FontAwesomeIcon icon={faLinkedin}   className="w-7 h-7  hover:text-black-500/80 rounded-full" /> </a>
-       <a href="https://twitter.com/ParasMe12853105" target="blank"> <FontAwesomeIcon icon={faTwitter}   className="w-7 h-7  hover:text-black-500/80 rounded-full" /> </a> 
-       <a href="https://discordapp.com/users/929032026978398238" target="blank"><FontAwesomeIcon icon={faDiscord}  className="w-7 h-7  hover:text-black-500/80 rounded-full" /> </a>  
-      </div>
+      
+      <Socials/>
 
       <form onSubmit={handleSubmit}  className="w-full lg:w-[80%] flex flex-col gap-7 mt-14 "  >
       
