@@ -12,6 +12,7 @@ import CTA from '../Components/CTA';
 //Card
 const ProjectCard = ({ index, name, description, tags, image, source_code_link , link}) => {
    return (
+
    <Tilt
      className="bg-slate-300/40 p-3 rounded-2xl w-full sm:w-[360px] hover:border border-cyan-600"
      options = {{
@@ -53,10 +54,8 @@ const ProjectCard = ({ index, name, description, tags, image, source_code_link ,
       </div>
       ))}
     </div>
-    
-    
+ 
   </Tilt>
-
   )}
 
 
