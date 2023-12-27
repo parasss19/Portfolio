@@ -1,7 +1,7 @@
 import React from 'react'
 import {Tilt} from 'react-tilt'
-import { projects } from '../constants'
 import { Typewriter } from 'react-simple-typewriter'
+import { projects } from '../constants'
 
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faGithub } from '@fortawesome/free-brands-svg-icons'
@@ -9,7 +9,7 @@ import {faLink} from '@fortawesome/free-solid-svg-icons'
 
 
 //Card
-const ProjectCard = ({ index, name, description, tags, image, source_code_link}) =>{
+const ProjectCard = ({ index, name, description, tags, image, source_code_link , link}) => {
    return (
    <Tilt
      className="bg-slate-300/40 p-3 rounded-2xl w-full sm:w-[360px] hover:border border-cyan-600"
@@ -20,26 +20,39 @@ const ProjectCard = ({ index, name, description, tags, image, source_code_link})
      }}
     >
 
+    {/* Project Image */}
     <div className='w-[full] h-[230px] relative'>
-      
-      {/* Project Image */}
       <img src={image} alt={name} className='w-full h-full object-cover rounded-xl'/>
-      
-      {/* Github icon over img */}
-      <div className='absolute flex justify-end m-2 inset-0'>
-      <a href="https://github.com/parasss19" target="blank"> <FontAwesomeIcon icon={faGithub}  className="w-5 h-7  hover:text-black-500/80 rounded-full" /> </a>
-      </div>
-
-      {/*Live Link */}
-      <div className='absolute flex justify-end mr-8 my-3 inset-0'>
-      <a href="https://github.com/parasss19" target="blank"> <FontAwesomeIcon icon={faLink} className=" text-black w-5 h-5  hover:text-blue-500 rounded-full" /> </a>
-      </div>
-
-
-      {/* Name and discription of project */}
-      
-    
     </div>
+
+    {/* Name of project */}
+    <div className='mt-5'>
+        <h3 className='font-bold font-poppins uppercase '> 
+            {name} 
+            <a href={link} target="blank"><FontAwesomeIcon icon={faLink} className="ml-3 mr-2 text-black w-5 h-5  hover:text-blue-500 rounded-full" /> </a>
+            <a href={source_code_link} target="blank"><FontAwesomeIcon icon={faGithub}  className=" w-5 h-7 hover:text-black-500/80 rounded-full" /> </a> 
+        </h3>
+    </div>
+
+    {/*Description of project*/}
+    <div className='mt-2'>
+      <p className='text-slate-700'>{description}</p>
+    </div>
+    
+    {/* tags */}
+    <div className='flex flex-wrap'>
+      {tags.map((tag)=>(
+        <div key={tag.name}  className='flex justify-center flex-col items-center rounded-xl btn-front'>
+        <img 
+          src={tag.imageUrl}  
+          alt={tag.name}  
+          className='w-1/2 h-1/2 object-contain mt-3' 
+        />
+        <span className='text-xs text-black-500/60'>{tag.name}</span>
+      </div>
+      ))}
+    </div>
+    
     
   </Tilt>
 
@@ -48,7 +61,6 @@ const ProjectCard = ({ index, name, description, tags, image, source_code_link})
 
 const Projects = () => {
   return (
-   <>
     <section className='max-container'>
 
     <h1 className='head-text '>Projects on
@@ -78,7 +90,7 @@ const Projects = () => {
     </div>
 
    </section>
-   </>
+   
   )
 }
 

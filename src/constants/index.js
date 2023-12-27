@@ -228,61 +228,98 @@ export const projects = [
         "Web-based platform that allows users to search, book, and manage car rentals from various providers, providing a convenient and efficient solution for transportation needs.",
       tags: [
         {
-          name: "react",
-          color: "blue-text-gradient",
+          imageUrl: nodejs,
+          name: "Node.js",
+          type: "Backend",
         },
         {
-          name: "mongodb",
-          color: "green-text-gradient",
+          imageUrl: react,
+          name: "React",
+          type: "Frontend",
         },
         {
-          name: "tailwind",
-          color: "pink-text-gradient",
-        },
+          imageUrl: tailwindcss,
+          name: "Tailwind CSS",
+          type: "Frontend",
+         },  
       ],
       image: carrent,
       source_code_link: "https://github.com/",
+      link: 'https://google.com'
     },
     {
       name: "Job IT",
       description:
         "Web application that enables users to search for job openings, view estimated salary ranges for positions, and locate available jobs based on their current location.",
-      tags: [
-        {
-          name: "react",
-          color: "blue-text-gradient",
-        },
-        {
-          name: "restapi",
-          color: "green-text-gradient",
-        },
-        {
-          name: "scss",
-          color: "pink-text-gradient",
-        },
-      ],
+        tags: [
+          {
+            imageUrl: nodejs,
+            name: "Node.js",
+            type: "Backend",
+          },
+          {
+            imageUrl: react,
+            name: "React",
+            type: "Frontend",
+          },
+          {
+            imageUrl: tailwindcss,
+            name: "Tailwind CSS",
+            type: "Frontend",
+           },  
+        ],
       image: jobit,
       source_code_link: "https://github.com/",
+      link: 'https://google.com'
     },
     {
       name: "Trip Guide",
       description:
         "A comprehensive travel booking platform that allows users to book flights, hotels, and rental cars, and offers curated recommendations for popular destinations.",
-      tags: [
-        {
-          name: "nextjs",
-          color: "blue-text-gradient",
-        },
-        {
-          name: "supabase",
-          color: "green-text-gradient",
-        },
-        {
-          name: "css",
-          color: "pink-text-gradient",
-        },
-      ],
+        tags: [
+          {
+            imageUrl: nodejs,
+            name: "Node.js",
+            type: "Backend",
+          },
+          {
+            imageUrl: react,
+            name: "React",
+            type: "Frontend",
+          },
+          {
+            imageUrl: tailwindcss,
+            name: "Tailwind CSS",
+            type: "Frontend",
+           },  
+        ],
       image: tripguide,
       source_code_link: "https://github.com/",
+      link: 'https://google.com'
+    },
+    {
+      name: "Trip Guide(copy)",
+      description:
+        "A comprehensive travel booking platform that allows users to book flights, hotels, and rental cars, and offers curated recommendations for popular destinations.",
+        tags: [
+          {
+            imageUrl: nodejs,
+            name: "Node.js",
+            type: "Backend",
+          },
+          {
+            imageUrl: react,
+            name: "React",
+            type: "Frontend",
+          },
+          {
+            imageUrl: tailwindcss,
+            name: "Tailwind CSS",
+            type: "Frontend",
+           },  
+        ],
+      image: tripguide,
+      source_code_link: "https://github.com/",
+      link: 'https://google.com'
     },
   ];
