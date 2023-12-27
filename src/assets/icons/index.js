@@ -16,6 +16,9 @@ import tailwindcss from './tailwindcss.svg'
 import typescript from './typescript.svg'
 import linkedin from './linkedin.svg'
 import twitter from './twitter.svg'
+import carrent from './carrent.png'
+import jobit from './jobit.png'
+import tripguide from './tripguide.png'
 import car from './car.svg'
 import estate from './estate.svg'
 import pricewise from './pricewise.svg'
@@ -46,6 +49,9 @@ export {
     typescript,
     linkedin,
     twitter,
+    carrent,
+    tripguide,
+    jobit,
     car,
     estate,
     pricewise,

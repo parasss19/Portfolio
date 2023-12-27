@@ -3,7 +3,6 @@ import {
     car,
     contact,
     css,
-    estate,
     express,
     git,
     github,
@@ -11,19 +10,23 @@ import {
     javascript,
     linkedin,
     mongodb,
-    motion,
     mui,
     nextjs,
     nodejs,
     pricewise,
     react,
     redux,
+    tailwindcss,
+    typescript,
+    carrent,
+    tripguide,
+    jobit,
+    estate,
+    motion,
     sass,
     snapgram,
     summiz,
-    tailwindcss,
     threads,
-    typescript
 } from "../assets/icons";
 
 export const skills = [ 
@@ -172,47 +175,114 @@ export const socialLinks = [
     }
 ];
 
+// export const projects = [
+//     {
+//         iconUrl: pricewise,
+//         theme: 'btn-back-red',
+//         name: 'Amazon Price Tracker',
+//         description: 'Developed a web application that tracks and notifies users of price changes for products on Amazon, helping users find the best deals.',
+//         link: 'https://github.com/adrianhajdin/pricewise',
+//     },
+//     {
+//         iconUrl: threads,
+//         theme: 'btn-back-green',
+//         name: 'Full Stack Threads Clone',
+//         description: 'Created a full-stack replica of the popular discussion platform "Threads," enabling users to post and engage in threaded conversations.',
+//         link: 'https://github.com/adrianhajdin/threads',
+//     },
+//     {
+//         iconUrl: car,
+//         theme: 'btn-back-blue',
+//         name: 'Car Finding App',
+//         description: 'Designed and built a mobile app for finding and comparing cars on the market, streamlining the car-buying process.',
+//         link: 'https://github.com/adrianhajdin/project_next13_car_showcase',
+//     },
+//     {
+//         iconUrl: snapgram,
+//         theme: 'btn-back-pink',
+//         name: 'Full Stack Instagram Clone',
+//         description: 'Built a complete clone of Instagram, allowing users to share photos and connect with friends in a familiar social media environment.',
+//         link: 'https://github.com/adrianhajdin/social_media_app',
+//     },
+//     {
+//         iconUrl: estate,
+//         theme: 'btn-back-black',
+//         name: 'Real-Estate Application',
+//         description: 'Developed a web application for real estate listings, facilitating property searches and connecting buyers with sellers.',
+//         link: 'https://github.com/adrianhajdin/projects_realestate',
+//     },
+//     {
+//         iconUrl: summiz,
+//         theme: 'btn-back-yellow',
+//         name: 'AI Summarizer Application',
+//         description: 'App that leverages AI to automatically generate concise & informative summaries from lengthy text content, or blogs.',
+//         link: 'https://github.com/adrianhajdin/project_ai_summarizer',
+//     }
+// ];
+
+
 export const projects = [
     {
-        iconUrl: pricewise,
-        theme: 'btn-back-red',
-        name: 'Amazon Price Tracker',
-        description: 'Developed a web application that tracks and notifies users of price changes for products on Amazon, helping users find the best deals.',
-        link: 'https://github.com/adrianhajdin/pricewise',
+      name: "Car Rent",
+      description:
+        "Web-based platform that allows users to search, book, and manage car rentals from various providers, providing a convenient and efficient solution for transportation needs.",
+      tags: [
+        {
+          name: "react",
+          color: "blue-text-gradient",
+        },
+        {
+          name: "mongodb",
+          color: "green-text-gradient",
+        },
+        {
+          name: "tailwind",
+          color: "pink-text-gradient",
+        },
+      ],
+      image: carrent,
+      source_code_link: "https://github.com/",
     },
     {
-        iconUrl: threads,
-        theme: 'btn-back-green',
-        name: 'Full Stack Threads Clone',
-        description: 'Created a full-stack replica of the popular discussion platform "Threads," enabling users to post and engage in threaded conversations.',
-        link: 'https://github.com/adrianhajdin/threads',
+      name: "Job IT",
+      description:
+        "Web application that enables users to search for job openings, view estimated salary ranges for positions, and locate available jobs based on their current location.",
+      tags: [
+        {
+          name: "react",
+          color: "blue-text-gradient",
+        },
+        {
+          name: "restapi",
+          color: "green-text-gradient",
+        },
+        {
+          name: "scss",
+          color: "pink-text-gradient",
+        },
+      ],
+      image: jobit,
+      source_code_link: "https://github.com/",
     },
     {
-        iconUrl: car,
-        theme: 'btn-back-blue',
-        name: 'Car Finding App',
-        description: 'Designed and built a mobile app for finding and comparing cars on the market, streamlining the car-buying process.',
-        link: 'https://github.com/adrianhajdin/project_next13_car_showcase',
+      name: "Trip Guide",
+      description:
+        "A comprehensive travel booking platform that allows users to book flights, hotels, and rental cars, and offers curated recommendations for popular destinations.",
+      tags: [
+        {
+          name: "nextjs",
+          color: "blue-text-gradient",
+        },
+        {
+          name: "supabase",
+          color: "green-text-gradient",
+        },
+        {
+          name: "css",
+          color: "pink-text-gradient",
+        },
+      ],
+      image: tripguide,
+      source_code_link: "https://github.com/",
     },
-    {
-        iconUrl: snapgram,
-        theme: 'btn-back-pink',
-        name: 'Full Stack Instagram Clone',
-        description: 'Built a complete clone of Instagram, allowing users to share photos and connect with friends in a familiar social media environment.',
-        link: 'https://github.com/adrianhajdin/social_media_app',
-    },
-    {
-        iconUrl: estate,
-        theme: 'btn-back-black',
-        name: 'Real-Estate Application',
-        description: 'Developed a web application for real estate listings, facilitating property searches and connecting buyers with sellers.',
-        link: 'https://github.com/adrianhajdin/projects_realestate',
-    },
-    {
-        iconUrl: summiz,
-        theme: 'btn-back-yellow',
-        name: 'AI Summarizer Application',
-        description: 'App that leverages AI to automatically generate concise & informative summaries from lengthy text content, or blogs.',
-        link: 'https://github.com/adrianhajdin/project_ai_summarizer',
-    }
-];
+  ];
