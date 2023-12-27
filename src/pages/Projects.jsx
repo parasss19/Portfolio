@@ -6,6 +6,7 @@ import { projects } from '../constants'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faGithub } from '@fortawesome/free-brands-svg-icons'
 import {faLink} from '@fortawesome/free-solid-svg-icons'
+import CTA from '../Components/CTA';
 
 
 //Card
@@ -89,8 +90,12 @@ const Projects = () => {
       ))}
     </div>
 
+    <hr className='border-slate-400 mt-16' />
+
+    <CTA />
+
+
    </section>
-   
   )
 }
 
